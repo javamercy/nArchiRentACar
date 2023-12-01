@@ -1,6 +1,6 @@
-namespace Application.Features.Brands.Commands.Create;
+namespace Application.Features.Brands.Queries.GetById;
 
-public class CreatedBrandResponse
+public class GetByIdBrandResponse
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

@@ -1,6 +1,8 @@
+using Domain.Entities;
+using Core.Persistence.Repositories;
+
 namespace Application.Services.Repositories;
 
-public class IBrandRepository:IAsyncRepository<Brand>,IRepository<Brand>
+public interface IBrandRepository : IAsyncRepository<Brand, Guid>
 {
-    
 }
