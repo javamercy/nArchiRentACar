@@ -12,10 +12,7 @@ public static class PersistenceServiceRegistration
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services,
         IConfiguration configuration)
     {
-        //services.AddDbContext<BaseDbContext>(options => options.UseInMemoryDatabase("nArchitecture"));
-        services.AddDbContext<BaseDbContext>(options =>
-            options.UseSqlServer(
-                "Server=localhost,1433;Database=RentACar;User Id=sa;Password=Gamefounder.23;TrustServerCertificate=True;"));
+        services.AddDbContext<BaseDbContext>(options => options.UseInMemoryDatabase("nArchitecture"));
 
         services.AddScoped<IBrandRepository, BrandRepository>();
 
