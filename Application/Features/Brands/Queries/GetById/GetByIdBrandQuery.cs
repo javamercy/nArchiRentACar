@@ -1,5 +1,6 @@
 using Application.Services.Repositories;
 using AutoMapper;
+using Domain.Entities;
 using MediatR;
 
 namespace Application.Features.Brands.Queries.GetById;
