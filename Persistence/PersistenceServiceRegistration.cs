@@ -14,10 +14,10 @@ public static class PersistenceServiceRegistration
     {
         //services.AddDbContext<BaseDbContext>(options => options.UseInMemoryDatabase("nArchitecture"));
         services.AddDbContext<BaseDbContext>(options =>
-            options.UseSqlServer(
-                "Server=localhost,1433;Database=RentACar;User Id=sa;Password=Gamefounder.23;TrustServerCertificate=True;"));
+            options.UseSqlServer(configuration.GetConnectionString("RentACar")));
 
         services.AddScoped<IBrandRepository, BrandRepository>();
+        services.AddScoped<IModelRepository, ModelRepository>();
 
         return services;
     }

@@ -1,0 +1,41 @@
+using Application.Features.Models.Queries.GetList;
+using Application.Services.Repositories;
+using AutoMapper;
+using Core.Application.Requests;
+using Core.Application.Responses;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+
+namespace Application.Features.Models.Queries.GetList;
+
+public class GetListModelQuery : IRequest<GetListResponse<GetListModelListItemDto>>
+{
+    public PageRequest PageRequest { get; set; }
+
+    private class
+        GetListModelQueryHandler : IRequestHandler<GetListModelQuery, GetListResponse<GetListModelListItemDto>>
+    {
+        private readonly IModelRepository _modelRepository;
+        private readonly IMapper _mapper;
+
+        public GetListModelQueryHandler(IModelRepository modelRepository, IMapper mapper)
+        {
+            _modelRepository = modelRepository;
+            _mapper = mapper;
+        }
+
+        public async Task<GetListResponse<GetListModelListItemDto>> Handle(GetListModelQuery request,
+            CancellationToken cancellationToken)
+        {
+            var models = await _modelRepository.GetListAsync(
+                include: model => model.Include(m => m.Brand).Include(m => m.Fuel).Include(m => m.Transmission),
+                index: request.PageRequest.PageIndex,
+                size: request.PageRequest.PageSize,
+                cancellationToken: cancellationToken);
+
+            var response = _mapper.Map<GetListResponse<GetListModelListItemDto>>(models);
+
+            return response;
+        }
+    }
+}
