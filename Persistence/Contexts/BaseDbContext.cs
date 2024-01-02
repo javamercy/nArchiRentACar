@@ -20,7 +20,7 @@ public class BaseDbContext : DbContext
     public BaseDbContext(DbContextOptions contextOptions, IConfiguration configuration) : base(contextOptions)
     {
         Configuration = configuration;
-        Database.Migrate();
+        Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
