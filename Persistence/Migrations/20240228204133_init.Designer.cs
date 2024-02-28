@@ -12,7 +12,7 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20231207122438_init")]
+    [Migration("20240228204133_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -60,61 +60,61 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = new Guid("fa9c7d42-b6cf-43d5-9651-e8c2266e30fa"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8050),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(960),
                             Name = "Audi"
                         },
                         new
                         {
                             Id = new Guid("a358155a-234c-4525-b33c-de1ea21c1469"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8060),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(960),
                             Name = "BMW"
                         },
                         new
                         {
                             Id = new Guid("1caa83b0-b32c-4e94-8e12-03b19fe584bf"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8060),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(970),
                             Name = "Mercedes"
                         },
                         new
                         {
                             Id = new Guid("c5450178-921a-46c6-b236-b0e4787604e6"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8060),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(970),
                             Name = "Volkswagen"
                         },
                         new
                         {
                             Id = new Guid("c62c12fe-5b4b-436f-b2cc-3a8ce337c054"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8060),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(970),
                             Name = "Ford"
                         },
                         new
                         {
                             Id = new Guid("5929393a-5518-4097-95f7-2b36c3852ba9"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8080),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(970),
                             Name = "Opel"
                         },
                         new
                         {
                             Id = new Guid("32495789-b924-4c2b-8d1f-5a5a7d9b8873"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8080),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(970),
                             Name = "Renault"
                         },
                         new
                         {
                             Id = new Guid("20dd0a38-b7fb-4dc1-aa1e-957854a10ad5"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8090),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(970),
                             Name = "Peugeot"
                         },
                         new
                         {
                             Id = new Guid("96c517b6-dfac-4eb6-b29e-5c9c7b875bb2"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8090),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(980),
                             Name = "Fiat"
                         },
                         new
                         {
                             Id = new Guid("47f065d2-d009-40fa-a096-bde4b754aee2"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8090),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(980),
                             Name = "Skoda"
                         });
                 });
@@ -127,7 +127,8 @@ namespace Persistence.Migrations
                         .HasColumnName("Id");
 
                     b.Property<int>("CarState")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("CarState");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
@@ -142,14 +143,16 @@ namespace Persistence.Migrations
                         .HasColumnName("Kilometer");
 
                     b.Property<int>("MinFindexScore")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("MinFindexScore");
 
                     b.Property<Guid>("ModelId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("ModelId");
 
                     b.Property<int>("ModelYear")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("ModelYear");
 
                     b.Property<string>("Plate")
                         .IsRequired()
@@ -202,25 +205,25 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = new Guid("9f39e21d-2df4-4b5b-abc1-c4d1d3c37588"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(7940),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(870),
                             Name = "Gasoline"
                         },
                         new
                         {
                             Id = new Guid("7e57d004-2b97-0e7a-b45f-5387362902d2"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(7940),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(880),
                             Name = "Diesel"
                         },
                         new
                         {
                             Id = new Guid("5fa1c428-304a-4016-9ab2-99560626e1ce"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(7940),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(880),
                             Name = "LPG"
                         },
                         new
                         {
                             Id = new Guid("4e6e6f6b-2d6f-4e6e-6f6b-2d6f4e6e6f6b"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(7940),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(880),
                             Name = "Electric"
                         });
                 });
@@ -241,7 +244,9 @@ namespace Persistence.Migrations
                         .HasColumnName("CreatedDate");
 
                     b.Property<decimal>("DailyPrice")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("DailyPrice");
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2")
@@ -253,7 +258,8 @@ namespace Persistence.Migrations
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ImageUrl");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -286,7 +292,7 @@ namespace Persistence.Migrations
                         {
                             Id = new Guid("655ee34e-d40c-488a-a730-cdbc9e7938e3"),
                             BrandId = new Guid("fa9c7d42-b6cf-43d5-9651-e8c2266e30fa"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8110),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(990),
                             DailyPrice = 1500m,
                             FuelId = new Guid("7e57d004-2b97-0e7a-b45f-5387362902d2"),
                             ImageUrl = "images/audi-a3.jpg",
@@ -297,7 +303,7 @@ namespace Persistence.Migrations
                         {
                             Id = new Guid("622de90a-9b2f-416f-b355-a2db8700b6a6"),
                             BrandId = new Guid("a358155a-234c-4525-b33c-de1ea21c1469"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8110),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(1000),
                             DailyPrice = 1450m,
                             FuelId = new Guid("7e57d004-2b97-0e7a-b45f-5387362902d2"),
                             ImageUrl = "images/bmw-3-series.jpg",
@@ -308,7 +314,7 @@ namespace Persistence.Migrations
                         {
                             Id = new Guid("8aa08cdc-6cb5-4279-a521-7201f7ee8f45"),
                             BrandId = new Guid("1caa83b0-b32c-4e94-8e12-03b19fe584bf"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8110),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(1000),
                             DailyPrice = 1600m,
                             FuelId = new Guid("5fa1c428-304a-4016-9ab2-99560626e1ce"),
                             ImageUrl = "images/mercedes-c-class.jpg",
@@ -319,7 +325,7 @@ namespace Persistence.Migrations
                         {
                             Id = new Guid("a6b40c9a-2b3d-4dbf-993b-483fb7a855f3"),
                             BrandId = new Guid("c5450178-921a-46c6-b236-b0e4787604e6"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8120),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(1000),
                             DailyPrice = 1200m,
                             FuelId = new Guid("9f39e21d-2df4-4b5b-abc1-c4d1d3c37588"),
                             ImageUrl = "images/volkswagen-golf.jpg",
@@ -330,7 +336,7 @@ namespace Persistence.Migrations
                         {
                             Id = new Guid("47664e1a-3811-4d49-a4e2-85f5db020882"),
                             BrandId = new Guid("c62c12fe-5b4b-436f-b2cc-3a8ce337c054"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8120),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(1010),
                             DailyPrice = 1100m,
                             FuelId = new Guid("9f39e21d-2df4-4b5b-abc1-c4d1d3c37588"),
                             ImageUrl = "images/ford-focus.jpg",
@@ -374,19 +380,19 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = new Guid("2ae251cf-354e-4c6a-b808-9fb7805b71d3"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8040),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(950),
                             Name = "Manual"
                         },
                         new
                         {
                             Id = new Guid("9799d776-2a92-4771-a73d-19a381f73cef"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8040),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(950),
                             Name = "Automatic"
                         },
                         new
                         {
                             Id = new Guid("bd2bb9e7-9f5a-442a-a24d-97bc98f4205f"),
-                            CreatedDate = new DateTime(2023, 12, 7, 12, 24, 37, 951, DateTimeKind.Utc).AddTicks(8040),
+                            CreatedDate = new DateTime(2024, 2, 28, 20, 41, 33, 26, DateTimeKind.Utc).AddTicks(950),
                             Name = "Semi-Automatic"
                         });
                 });

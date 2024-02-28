@@ -26,9 +26,7 @@ public class GetByIdBrandQuery : IRequest<GetByIdBrandResponse>
                 withDeleted: true,
                 cancellationToken: cancellationToken);
 
-            var response = _mapper.Map<GetByIdBrandResponse>(brand);
-
-            return response;
+            return _mapper.Map<GetByIdBrandResponse>(brand);
         }
     }
 }

@@ -27,13 +27,11 @@ public class DeleteBrandCommand : IRequest<DeletedBrandResponse>, ITransactional
 
         public async Task<DeletedBrandResponse> Handle(DeleteBrandCommand request, CancellationToken cancellationToken)
         {
-            var brandToDelete = _mapper.Map<Brand>(request);
+            var brand = _mapper.Map<Brand>(request);
 
-            await _brandRepository.DeleteAsync(brandToDelete);
+            await _brandRepository.DeleteAsync(brand);
 
-            var response = _mapper.Map<DeletedBrandResponse>(brandToDelete);
-
-            return response;
+            return _mapper.Map<DeletedBrandResponse>(brand);
         }
     }
 }
