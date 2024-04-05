@@ -4,12 +4,29 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
+        <Folder Include="Features\Auth\Commands\Create\EnableEmailAuthenticator\"/>
+        <Folder Include="Features\Auth\Commands\Create\EnableOtpAuthenticator\"/>
+        <Folder Include="Features\Auth\Commands\Create\Login\"/>
+        <Folder Include="Features\Auth\Commands\Create\RefreshToken\"/>
+        <Folder Include="Features\Auth\Commands\Create\RevokeToken\"/>
+        <Folder Include="Features\Auth\Commands\Create\VeifyOtpAuthenticator\"/>
+        <Folder Include="Features\Auth\Commands\Create\VerifyEmailAuthenticator\"/>
+        <Folder Include="Features\Auth\Commands\Delete\"/>
+        <Folder Include="Features\Auth\Commands\Update\"/>
+        <Folder Include="Features\Auth\Profiles\"/>
+        <Folder Include="Features\Auth\Queries\"/>
+        <Folder Include="Features\Auth\Rules\"/>
         <Folder Include="Features\Models\Commands\"/>
         <Folder Include="Features\Models\Constants\"/>
         <Folder Include="Features\Models\Rules\"/>
+        <Folder Include="Features\Users\Commands\Delete\"/>
+        <Folder Include="Features\Users\Commands\Update\"/>
+        <Folder Include="Features\Users\Profiles\"/>
+        <Folder Include="Features\Users\Queries\"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -17,6 +34,8 @@
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1"/>
         <PackageReference Include="MediatR" Version="12.1.1"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14"/>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -32,6 +51,9 @@
         </Reference>
         <Reference Include="Core.Persistence">
             <HintPath>..\..\..\CorePackages\Core.Packages\Core.Persistence\bin\Debug\net7.0\Core.Persistence.dll</HintPath>
+        </Reference>
+        <Reference Include="Core.Security">
+            <HintPath>..\..\..\CorePackages\Core.Packages\Core.Security\bin\Debug\net7.0\Core.Security.dll</HintPath>
         </Reference>
     </ItemGroup>
 
